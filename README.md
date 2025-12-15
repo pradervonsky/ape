@@ -99,9 +99,7 @@ unique(employee$Performance.Score)
     ## [1] "Fully Meets"       "Exceeds"           "Needs Improvement"
     ## [4] "PIP"
 
-Select only EmpID, ADEmail, EmployeeStatus, EmployeeType,
-DepartmentType, DOB, and Performance.Score columns and filter only
-active employee
+Select only relevant columns and filter only active employee
 
 ``` r
 # select only EmpID, ADEmail, EmployeeStatus, EmployeeType, DepartmentType, DOB, and Performance.Score columns
@@ -208,8 +206,7 @@ print(phishing)
     ## 11         income threatening  detailed
     ## 12         career threatening  detailed
 
-Randomize and assign characteristic variables to individual employee and
-keep each variant balanced
+Randomize and assign characteristic variables to individual employee and keep each variant balanced
 
 ``` r
 set.seed(123)
