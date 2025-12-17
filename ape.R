@@ -174,7 +174,7 @@ group_summary
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-# > pairwise uplift testing against control group ----
+# > pairwise proportion testing against control group ----
 control <- group_summary %>% filter(Group == "administrative_friendly_short")
 ctr_C = control$CTR
 sent_C = control$EmailSent
@@ -198,6 +198,24 @@ results <- group_summary %>%
   select(-ctr_T, -sent_T)
 control
 results
+
+## >> ex-post power calculation ----
+sent_T <- sent_C
+alpha <- 0.05 # significance level
+mde <- ctr_C + delta0  # minimum detectable effect
+
+# pooled SE
+SE <- sqrt(
+  ctr_C * (1 - ctr_C) / sent_C +
+    mde   * (1 - mde)   / sent_T
+)
+
+# z value for alpha
+z_alpha <- qnorm(1 - alpha)
+
+# calculate power
+power <- 1 - pnorm(z_alpha - (delta0 / SE))
+power
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
