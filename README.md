@@ -428,7 +428,7 @@ print(group_summary, n = Inf, width = Inf)
     ## 11 career_threatening_short                    108       205 0.527
     ## 12 career_threatening_detailed                 108       204 0.529
 
-# \> Pairwise uplift testing against control group
+# \> Pairwise proportion testing against control group
 
 ``` r
 control <- group_summary %>% filter(Group == "administrative_friendly_short")
@@ -483,6 +483,29 @@ print(results, n = Inf, width = Inf)
     ##  9  113.  0.0461  3.81  0.0000686 TRUE  
     ## 10  116   0.0460  3.98  0.0000349 TRUE  
     ## 11  117.  0.0461  4.03  0.0000281 TRUE
+
+## \>\> Ex-post power calculation
+
+``` r
+sent_T <- sent_C
+alpha <- 0.05 # significance level
+mde <- ctr_C + delta0  # minimum detectable effect
+
+# pooled SE
+SE <- sqrt(
+  ctr_C * (1 - ctr_C) / sent_C +
+    mde   * (1 - mde)   / sent_T
+)
+
+# z value for alpha
+z_alpha <- qnorm(1 - alpha)
+
+# calculate power
+power <- 1 - pnorm(z_alpha - (delta0 / SE))
+power
+```
+
+    ## [1] 0.7227681
 
 # \> GLM fit and emmeans analysis
 
