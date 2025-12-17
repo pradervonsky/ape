@@ -3,9 +3,11 @@ The experiment is designed as a simulated cybersecurity training exercise and fo
 
 The project combines experimental design, data simulation, and statistical analysis to evaluate how email **topic**, **tone**, and **structure** affect employee click-through rates (CTR).
 
-- Data: [Kaggle Employee/HR Dataset](https://www.kaggle.com/datasets/ravindrasinghrana/employeedataset?select=employee_data.csv)
+![image](https://github.com/pradervonsky/ape/blob/main/ape-workflow.png)
 
-- R file: [ape.R](https://github.com/pradervonsky/ape/blob/main/ape.R)
+- **Data**: Kaggle Employee/HR Dataset [Link 1](https://www.kaggle.com/datasets/ravindrasinghrana/employeedataset?select=employee_data.csv) | [Link 2](https://github.com/pradervonsky/ape/blob/main/employee_data.csv)
+
+- **R file**: [ape.R](https://github.com/pradervonsky/ape/blob/main/ape.R)
 
 ---
 
