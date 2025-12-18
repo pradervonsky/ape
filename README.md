@@ -1,8 +1,8 @@
 # APE: AI-assisted Phishing Experiment
 
-This project is designed as a simulated cybersecurity training experiment aimed at understanding human susceptibility to AI-generated phishing emails. It integrates experimental design, data simulation, and statistical analysis to examine how variations in email topic, tone, and structure influence employee click-through rates (CTR). The experimental pipeline begins with n8n, which orchestrates the generation of multiple email variants and randomly assigns each employee to one of the 12 experimental conditions before distributing the emails. Employee click behavior is then captured and subsequently analyzed using the R programming language to evaluate treatment effects.
-
 ![image](https://github.com/pradervonsky/ape/blob/main/ape-workflow.png)
+
+This project is designed as a simulated cybersecurity training experiment aimed at understanding human susceptibility to AI-generated phishing emails. It integrates experimental design, data simulation, and statistical analysis to examine how variations in email topic, tone, and structure influence employee click-through rates (CTR). The experimental pipeline begins with n8n, which orchestrates the generation of multiple email variants and randomly assigns each employee to one of the 12 experimental conditions before distributing the emails. Employee click behavior is then captured and subsequently analyzed using the R programming language to evaluate treatment effects.
 
 - **Data**: [Kaggle Employee/HR Dataset](https://www.kaggle.com/datasets/ravindrasinghrana/employeedataset?select=employee_data.csv)
 - **R file**: [ape.R](https://github.com/pradervonsky/ape/blob/main/ape.R)
